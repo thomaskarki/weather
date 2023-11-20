@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/* Nicholas J. Corkigian, 123456789 */
+
+*
+{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body
+{
+  font-family: Arial, Helvetica, Verdans, sans-serif;
+  min-width: 620px;
+}
+
+nav
+{
+  background-color: black;
+  padding: 0px 20px;
+  position: sticky;
+  top: 0px;
+}
+
+nav::after
+{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+nav li 
+{
+  float: left;
+  padding: 10px 10px;
+  margin: 0px 1em;
+}
+
+
+nav li:hover
+{
+  background-color: #808080;
+}
+
+nav a 
+{
+  color: #fdb924;
+}
+
+nav a:hover
+{
+  text-decoration: underline;
+}
+
+header
+{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+header > img
+{
+  justify-self: center;
+}
+
+header div#social
+{
+  align-self: center;
+}
+
+footer
+{
+  background-color: #fdb924;
+  display: grid;
+  grid-gap: 60px;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  padding: 20px 0px 0px 20px;
+}
+
+h4
+{
+  border-bottom: 1px solid black;
+}
+
+footer div img
+{
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+
