@@ -1,843 +1,318 @@
-<!--
-WINE:::::::
-HTML:
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <!-- Nicholas J. Corkigian, 123456789 -->
-    <title>Weather</title>
-    <link href="weather.css" rel="stylesheet" type="text/css">
+    <title>Soccer Camp</title>
     <style>
+      *
+      {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;        
+      }
+      
+      body
+      {
+        margin: 0px auto 2em;
+        width: 90%;
+      }
+      
       main
       {
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: auto 250px;
-        margin: 10px 100px;
+        grid-template-columns: 2fr 1fr;
       }
       
-      h1
+      header h1
       {
-        background-color: #fdb924;
-        margin: 10px 0px;
-        padding-left: 10px;
+        color: #D3D3D3;
+        font-family: 'Courier New', sans-serif;
+        font-size: 2em;
+        margin: 10px;
+        text-align: center;
       }
       
-      section p 
+      footer
       {
-        margin-bottom: 10px;
+        border-top: 1px solid black;
+        font-family: Calibri, sans-serif;
+        font-size: 0.75em;
+        margin-top: 2em;
+        text-align: center;
+      }
+      
+      table
+      {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        width: 100%;
+      }
+      
+      table caption
+      {
+        caption-side: bottom;
+        font-family: 'Times New Roman', serif;
+      }
+      
+      table th, table td
+      {
+        border: 1px solid black;
+        font-weight: normal;
+        padding: 1em 0px 1em 5px;
+        text-align: left;
+      }
+      
+      table thead
+      {
+        background-color: black;
+        color: white;
+        font-family: 'Times New Roman', serif;
+        padding: 1em 0px;
+      }
+      
+      table thead th
+      {
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      table col#firstCol
+      {
+        background-color: #D3D3D3;
+        width: 15%;
+      }
+      
+      table col.restDays
+      {
+        width: 12%;
       }
       
       aside
       {
-        background-image: url(images/background/clouds.jpg);
+        font-family: Arial, sans-serif;
       }
       
-      aside p
+      form
       {
-        margin: 0px 10px;
-      }
-      
-      aside ol 
-      {
-        padding-left: 30px;
-      }
-      
-      aside li 
-      {
-        list-style-type: lower-roman;
-      }
-      
-      article
-      {
-        grid-column: 1 / 3;
-      }
-      
-      article div
-      {
-        display: flex;
-        flex-flow: row wrap;
-      }
-      
-      article figure
-      {
-        border: 2px solid #808080;
-        margin: 20px;
-      }
-      
-      article figure figcaption
-      {
-        text-align: center;
-      }
-      
-      section div
-      {
-        display: flex;
-        flex-flow: row nowrap;
-      }
-      
-      section div figure
-      {
-        border: 1px solid #808080;
-        flex: 1 1 100px;
-        padding: 5px;
-      }
-      
-      section span
-      {
-        font-size: larger;
-        font-weight: bold;         
-      }
-      
-      section h5
-      {
-        margin-top: 10px;
-      }
-      
-      section img
-      {
-        display: block;
-        height: 100px;
+        border: 1px solid black;
+        padding: 10px;
         width: 100%;
+      }
+      
+      form h2
+      {
+        margin-top: 0px;
+      }
+      
+      form fieldset
+      {
+        border: 1px solid black;
+        margin: 5px 0px;
+        padding: 10px;
+      }
+      
+      form legend
+      {
+        padding: 0px 25px;
+      }
+      
+      form fieldset#ident label
+      {
+        display: inline-block;
+        margin-right: 10px;
+        text-align: right;
+        width: 100px;
+      }
+      
+      form fieldset#ident label.radio
+      {
+        display: inline;
+      }
+      
+      form textarea
+      {
+        height: 6em;
+        width: 90%;
+      }
+      
+      form #buttons input
+      {
+        background-color: white;
+        border: 0px solid black;
+        margin-right: 10px;
+        text-decoration: underline;
+      }
+      
+      @media only screen and (max-width: 600px)
+      {
+        main
+        {
+          display: block;
+        }
       }
     </style>
   </head>
   
   <body>
-    <nav>
-      <ul>
-        <li><a href="#">Today's Weather</a></li>
-        <li><a href="#">Clouds</a></li>
-        <li><a href="#">Wild Weather</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </nav>
-    
     <header>
-      <img src="images/logos/weathernow.png" alt="Weather">
-      
-      <div id="social">
-        <a href="https://www.facebook.com"><img src="images/socialmedia/facebook32.png" alt="Facebook"></a>
-        <a href="https://www.twitter.com"><img src="images/socialmedia/twitter32.png" alt="Twitter"></a>
-        <a href="mailto:weather@example.com"><img src="images/socialmedia/emailat32.png" alt="Email"></a>
-      </div>
+      <h1>Soccer Camp Registration</h1>
     </header>
     
     <main>
-      <section>
-        <h1>Forecast</h1>
-
-        <div>
-          <figure>
-            <h4>Today</h4>
-            <img src="images/weathericons/cloud.png" alt="Cloudy">
-            <span>15&deg;C</span>/8&deg;C
-            <h5>Cloudy</h5>
-          </figure>
-          
-          <figure>
-            <h4>Tomorrow</h4>
-            <img src="images/weathericons/suncloudstorm.png" alt="Cloudy with Thunderstorm in the morning">
-            <span>18&deg;C</span>/4&deg;C
-            <h5>Cloudy with Thunderstorm in the morning</h5>
-          </figure>
-          
-          <figure>
-            <h4>Friday</h4>
-            <img src="images/weathericons/rain.png" alt="Rainy all day">
-            <span>12&deg;C</span>/6&deg;C
-            <h5>Rainy all day</h5>
-          </figure>
-          
-          <figure>
-            <h4>Saturday</h4>
-            <img src="images/weathericons/suncloud.png" alt="Sun with clouds">
-            <span>21&deg;C</span>/10&deg;C
-            <h5>Sun with clouds</h5>
-          </figure>
-          
-          <figure>
-            <h4>Sunday</h4>
-            <img src="images/weathericons/suncloud.png" alt="Sun with clouds">
-            <span>24&deg;C</span>/12&deg;C
-            <h5>Sun with clouds</h5>
-          </figure>
-          
-        </div>
-        
-        <h1>Forecasting</h1>
-        <p>
-          Weather forecasting is the application of science and technology 
-          to predict the state of the atmosphere for a future time and a 
-          given location. Human beings have attempted to predict the weather 
-          informally for millennia, and formally since at least the 
-          nineteenth century.[27] Weather forecasts are made by collecting 
-          quantitative data about the current state of the atmosphere and 
-          using scientific understanding of atmospheric processes to project 
-          how the atmosphere will evolve.
-        </p>
-        
-        <p>
-          Once an all-human endeavor based mainly upon changes in barometric 
-          pressure, current weather conditions, and sky condition, forecast 
-          models are now used to determine future conditions. On the other 
-          hand, human input is still required to pick the best possible 
-          forecast model to base the forecast upon, which involve many 
-          disciplines such as pattern recognition skills, teleconnections, 
-          knowledge of model performance, and knowledge of model biases.
-        </p>
-      </section>
-
       <aside>
-        <h1>Clouds</h1>
-        
-        <p>
-          In meteorology, a cloud is an aerosol consisting of a visible mass 
-          of minute liquid droplets, frozen crystals, or other particles 
-          suspended in the atmosphere of a planetary body or similar space. 
-          Water or various other chemicals may compose the droplets and 
-          crystals. On Earth, clouds are formed as a result of saturation of 
-          the air when it is cooled to its dew point, or when it gains 
-          sufficient moisture (usually in the form of water vapor) from an 
-          adjacent source to raise the dew point to the ambient temperature.
-        </p>
-
-        <h1>Cloud Types</h1>
-        
-        <ol>
-          <li>Stratiform</li>
-          <li>Cirriform</li>
-          <li>Stratocumuliform</li>
-          <li>Cumuliform</li>
-          <li>Cumulonimbiform</li>
-        </ol>
+        <table>
+          <caption>July Weekly Schedule</caption>
+          
+          <colgroup>
+            <col id="firstCol">
+            <col class="restDays" span="7">
+          </colgroup>
+          
+          <thead>
+            <tr>
+              <th></th>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thur</th>
+              <th>Fri</th>
+              <th>Sat</th>            
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <th>9:00am - 10:30am</th>
+              <td>Free Time</td>
+              <td rowspan="3">Technical Skills</td>
+              <td colspan="4">Training Session</td>
+              <td>Free Time</td>
+            </tr>
+            
+            <tr>
+              <th>10:30am - 12:00pm</th>
+              <td rowspan="3">Round Robin Games</td>
+              <td rowspan="2" colspan="3">Dribbling</td>
+              <td rowspan="2">Game Analysis</td>
+              <td>Agility</td>
+            </tr>
+            
+            <tr>
+              <th>1:00pm - 2:30pm</th>
+              <td>Strength Training</td>
+            </tr>
+            
+            <tr>
+              <th>2:30pm - 5:00pm</th>
+              <td colspan="3">Nutrition</td>
+              <td>Passing and Receiving</td>
+              <td rowspan="2" colspan="2">Camper's Choice</td>
+            </tr>
+            
+            <tr>
+              <th>6:00pm - 8:00pm</th>
+              <td colspan="5">Night Games</td>
+            </tr>
+          </tbody>
+        </table>
       </aside>
       
-      <article>
-        <h1>Wild Weather</h1>
-        
-        <div id="gallery">
-          <figure>
-            <img src="images/weatherpics/weather1_tn.jpg" alt="Dust Storm">
-            <figcaption>Dust Storm</figcaption>
-          </figure>
+      <aside>
+        <form action="https://csunix.mohawkcollege.ca/tooltime/showit.pl" method="post">
+          <h2>Request Camp Information</h2>
+          <input type="hidden" name="formname" value="Nicholas Corkigian">
           
-          <figure>
-            <img src="images/weatherpics/weather2_tn.jpg" alt="Tornado">
-            <figcaption>Tornado</figcaption>
-          </figure>
+          <fieldset>
+            <legend>Camper Location</legend>
+            
+            <label for="location">Province</label>
+            <select name="location" id="location">
+              <option value="BC">British Columbia</option>
+              <option value="AB">Alberta</option>
+              <option value="ON" selected>Ontario</option>
+              <option value="QC">Quebec</option>
+              <option value="YT">Yukon</option>
+            </select>
+          </fieldset>
           
-          <figure>
-            <img src="images/weatherpics/weather3_tn.jpg" alt="Rain Storm">
-            <figcaption>Rain Storm</figcaption>
-          </figure>
+          <fieldset id="ident">
+            <legend>Camper Identification</legend>
+            
+            <div class="formRow">
+              <label for="firstName">First Name</label>
+              <input id="firstName" name="firstName">
+            </div>
+            
+            <div class="formRow">
+              <label for="lastName">Last Name</label>
+              <input id="lastName" name="lastName">
+            </div>
+
+            <div class="formRow">
+              <label>Gender</label>
+              <input type="radio" name="gender" id="male" value="male" checked>
+              <label class="radio" for="male">Male</label>
+              <input type="radio" name="gender" id="female" value="female">
+              <label class="radio" for="female">Female</label>
+            </div>
+
+            <div class="formRow">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com">
+            </div>
+
+            <div class="formRow">
+              <label for="age">Camper Age</label>
+              <select name="age" id="age">
+                <option value="8">8-9</option>
+                <option value="10">10-12</option>
+                <option value="13">13-15</option>
+                <option value="16">16-19</option>
+              </select>
+            </div>
+          </fieldset>
           
-          <figure>
-            <img src="images/weatherpics/weather4_tn.jpg" alt="Lightning">
-            <figcaption>Lightning</figcaption>
-          </figure>
+          <fieldset>
+            <legend>Please send me information about</legend>
+
+            <div class="formRow">
+              <input type="checkbox" name="info" value="dates" id="dates">
+              <label for="dates">Camp Dates</label>
+            </div>
+            
+            <div class="formRow">
+              <input type="checkbox" name="info" value="fees" id="fees">
+              <label for="fees">Camp fees</label>
+            </div>
+            
+            <div class="formRow">
+              <input type="checkbox" name="info" value="transport" id="transport" checked>
+              <label for="transport">Transportation</label>
+            </div>
+
+          </fieldset>
           
-          <figure>
-            <img src="images/weatherpics/weather5_tn.jpg" alt="Hurricane">
-            <figcaption>Hurricane</figcaption>
-          </figure>
+          <fieldset>
+            <legend>Question?</legend>
+            
+            <textarea name="questions">Please enter questions or comments here</textarea>
+          </fieldset>
           
-          <figure>
-            <img src="images/weatherpics/weather6_tn.jpg" alt="Rain Storm">
-            <figcaption>Rain Storm</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather7_tn.jpg" alt="Tornadoes">
-            <figcaption>Tornadoes</figcaption>
-          </figure>
-          
-        </div>
-      </article>
+          <div id="buttons">
+            <input type="Submit" value="Request Info">
+            <input type="Reset" value="Clear Form">
+          </div>
+        </form>
+      </aside>
     </main>
     
     <footer>
-      <img src="images/logos/weathernow_horiz.png" alt="weathernow">
-      
-      <div>
-        <h4>Contact Us</h4>
-        Email<br>
-        Phone
-        <br><br>
-        <h4>Apps</h4>
-        WeatherNow iOS<br>
-        WeatherNow Android
-      </div>
-      
-      <div>
-        <h4>Support</h4>
-        FAQs<br>
-        Privacy Policy<br>
-        Terms of Use
-      </div>
-      
-      <div>
-        <h4>Social</h4>
-        <a href="https://www.facebook.com"><img src="images/socialmedia/facebook32.png" alt="Facebook"></a>Facebook<br>
-        <a href="https://www.twitter.com"><img src="images/socialmedia/twitter32.png" alt="Twitter"></a>Twitter<br>
-        <a href="mailto:weather@example.com"><img src="images/socialmedia/emailat32.png" alt="Email"></a>weather@example.com
-      </div>
-      
-      
+      Mohawk College of Applied Arts and Technology
     </footer>
   </body>
 </html>
-
-CSS:::::
-@charset "utf-8";
-
-*
-{
-  box-sizing: border-box;
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-}
-
-body
-{
-  font-family: Tahoma, Verdana, Geneva, sans-serif;
-  min-width: 730px;
-}
-
-h1, h2, h3, h4
-{
-  color: purple;
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-
-header
-{
-  background-color: moccasin;
-  display: grid;
-  grid-template-columns: 512px 1fr;
-  grid-template-areas: "logo social"
-                       "logo book";
-}
-
-div#logo
-{
-  grid-area: logo;
-}
-
-div#social
-{
-  grid-area: social;
-  margin: auto;
-}
-
-div#book
-{
-  grid-area: book;
-  margin: auto;
-}
-
-div#book a 
-{
-  background-color: green;
-  border: 2px solid yellow;
-  color: yellow;
-  padding: 10px;
-  text-decoration: underline;
-}
-
-div#book a:hover
-{
-  background-color: yellow;
-  border: 2px solid green;
-  color: purple;
-}
-
-nav
-{
-  background-color: green;
-  padding: 0px 20px;
-}
-
-nav:after
-{
-  content: "";
-  clear: both;
-  display: table;
-}
-
-nav li 
-{
-  float: left;
-  width: 20%;
-}
-
-nav a 
-{
-  color: yellow;
-  display: block;
-  padding: 10px;
-  text-align: center;
-}
-
-nav a:hover
-{
-  background-color: yellow;
-  color: purple;
-}
-
-main
-{
-  display: grid;
-  grid-template-columns: 1fr 250px;
-  grid-gap: 20px;
-  margin: 20px;
-}
-
-main article img
-{
-  float: left;
-  margin: 10px;
-}
-
-main p 
-{
-  padding: 10px 0px 20px;
-}
-
-aside div
-{
-  background-color: #EEEEEE;
-  padding: 10px;
-}
-
-aside div h4 
-{
-  margin: 10px 0px;
-}
-
-
-article#gallery div
-{
-  background-color: yellowgreen;
-  border-radius: 10px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-aside#wineries
-{
-  background-color: #EEEEEE;
-  padding: 20px;
-}
-
-aside#wineries figure
-{
-  display: block;
-  margin: 10px 40px;
-}
-
-aside#wineries figcaption
-{
-  font-size: 80%;
-}
-
-footer
-{
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 20px;
-  padding: 20px;
-}
-
-WEATHER:::::::::::::::::::::::::::::::::::::::::::::::::::
-HTML:
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <!-- Nicholas J. Corkigian, 123456789 -->
-    <title>Weather</title>
-    <link href="weather.css" rel="stylesheet" type="text/css">
-    <style>
-      main
-      {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: auto 250px;
-        margin: 10px 100px;
-      }
-      
-      h1
-      {
-        background-color: #fdb924;
-        margin: 10px 0px;
-        padding-left: 10px;
-      }
-      
-      section p 
-      {
-        margin-bottom: 10px;
-      }
-      
-      aside
-      {
-        background-image: url(images/background/clouds.jpg);
-      }
-      
-      aside p
-      {
-        margin: 0px 10px;
-      }
-      
-      aside ol 
-      {
-        padding-left: 30px;
-      }
-      
-      aside li 
-      {
-        list-style-type: lower-roman;
-      }
-      
-      article
-      {
-        grid-column: 1 / 3;
-      }
-      
-      article div
-      {
-        display: flex;
-        flex-flow: row wrap;
-      }
-      
-      article figure
-      {
-        border: 2px solid #808080;
-        margin: 20px;
-      }
-      
-      article figure figcaption
-      {
-        text-align: center;
-      }
-      
-      section div
-      {
-        display: flex;
-        flex-flow: row nowrap;
-      }
-      
-      section div figure
-      {
-        border: 1px solid #808080;
-        flex: 1 1 100px;
-        padding: 5px;
-      }
-      
-      section span
-      {
-        font-size: larger;
-        font-weight: bold;         
-      }
-      
-      section h5
-      {
-        margin-top: 10px;
-      }
-      
-      section img
-      {
-        display: block;
-        height: 100px;
-        width: 100%;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <nav>
-      <ul>
-        <li><a href="#">Today's Weather</a></li>
-        <li><a href="#">Clouds</a></li>
-        <li><a href="#">Wild Weather</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </nav>
-    
-    <header>
-      <img src="images/logos/weathernow.png" alt="Weather">
-      
-      <div id="social">
-        <a href="https://www.facebook.com"><img src="images/socialmedia/facebook32.png" alt="Facebook"></a>
-        <a href="https://www.twitter.com"><img src="images/socialmedia/twitter32.png" alt="Twitter"></a>
-        <a href="mailto:weather@example.com"><img src="images/socialmedia/emailat32.png" alt="Email"></a>
-      </div>
-    </header>
-    
-    <main>
-      <section>
-        <h1>Forecast</h1>
-
-        <div>
-          <figure>
-            <h4>Today</h4>
-            <img src="images/weathericons/cloud.png" alt="Cloudy">
-            <span>15&deg;C</span>/8&deg;C
-            <h5>Cloudy</h5>
-          </figure>
-          
-          <figure>
-            <h4>Tomorrow</h4>
-            <img src="images/weathericons/suncloudstorm.png" alt="Cloudy with Thunderstorm in the morning">
-            <span>18&deg;C</span>/4&deg;C
-            <h5>Cloudy with Thunderstorm in the morning</h5>
-          </figure>
-          
-          <figure>
-            <h4>Friday</h4>
-            <img src="images/weathericons/rain.png" alt="Rainy all day">
-            <span>12&deg;C</span>/6&deg;C
-            <h5>Rainy all day</h5>
-          </figure>
-          
-          <figure>
-            <h4>Saturday</h4>
-            <img src="images/weathericons/suncloud.png" alt="Sun with clouds">
-            <span>21&deg;C</span>/10&deg;C
-            <h5>Sun with clouds</h5>
-          </figure>
-          
-          <figure>
-            <h4>Sunday</h4>
-            <img src="images/weathericons/suncloud.png" alt="Sun with clouds">
-            <span>24&deg;C</span>/12&deg;C
-            <h5>Sun with clouds</h5>
-          </figure>
-          
-        </div>
-        
-        <h1>Forecasting</h1>
-        <p>
-          Weather forecasting is the application of science and technology 
-          to predict the state of the atmosphere for a future time and a 
-          given location. Human beings have attempted to predict the weather 
-          informally for millennia, and formally since at least the 
-          nineteenth century.[27] Weather forecasts are made by collecting 
-          quantitative data about the current state of the atmosphere and 
-          using scientific understanding of atmospheric processes to project 
-          how the atmosphere will evolve.
-        </p>
-        
-        <p>
-          Once an all-human endeavor based mainly upon changes in barometric 
-          pressure, current weather conditions, and sky condition, forecast 
-          models are now used to determine future conditions. On the other 
-          hand, human input is still required to pick the best possible 
-          forecast model to base the forecast upon, which involve many 
-          disciplines such as pattern recognition skills, teleconnections, 
-          knowledge of model performance, and knowledge of model biases.
-        </p>
-      </section>
-
-      <aside>
-        <h1>Clouds</h1>
-        
-        <p>
-          In meteorology, a cloud is an aerosol consisting of a visible mass 
-          of minute liquid droplets, frozen crystals, or other particles 
-          suspended in the atmosphere of a planetary body or similar space. 
-          Water or various other chemicals may compose the droplets and 
-          crystals. On Earth, clouds are formed as a result of saturation of 
-          the air when it is cooled to its dew point, or when it gains 
-          sufficient moisture (usually in the form of water vapor) from an 
-          adjacent source to raise the dew point to the ambient temperature.
-        </p>
-
-        <h1>Cloud Types</h1>
-        
-        <ol>
-          <li>Stratiform</li>
-          <li>Cirriform</li>
-          <li>Stratocumuliform</li>
-          <li>Cumuliform</li>
-          <li>Cumulonimbiform</li>
-        </ol>
-      </aside>
-      
-      <article>
-        <h1>Wild Weather</h1>
-        
-        <div id="gallery">
-          <figure>
-            <img src="images/weatherpics/weather1_tn.jpg" alt="Dust Storm">
-            <figcaption>Dust Storm</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather2_tn.jpg" alt="Tornado">
-            <figcaption>Tornado</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather3_tn.jpg" alt="Rain Storm">
-            <figcaption>Rain Storm</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather4_tn.jpg" alt="Lightning">
-            <figcaption>Lightning</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather5_tn.jpg" alt="Hurricane">
-            <figcaption>Hurricane</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather6_tn.jpg" alt="Rain Storm">
-            <figcaption>Rain Storm</figcaption>
-          </figure>
-          
-          <figure>
-            <img src="images/weatherpics/weather7_tn.jpg" alt="Tornadoes">
-            <figcaption>Tornadoes</figcaption>
-          </figure>
-          
-        </div>
-      </article>
-    </main>
-    
-    <footer>
-      <img src="images/logos/weathernow_horiz.png" alt="weathernow">
-      
-      <div>
-        <h4>Contact Us</h4>
-        Email<br>
-        Phone
-        <br><br>
-        <h4>Apps</h4>
-        WeatherNow iOS<br>
-        WeatherNow Android
-      </div>
-      
-      <div>
-        <h4>Support</h4>
-        FAQs<br>
-        Privacy Policy<br>
-        Terms of Use
-      </div>
-      
-      <div>
-        <h4>Social</h4>
-        <a href="https://www.facebook.com"><img src="images/socialmedia/facebook32.png" alt="Facebook"></a>Facebook<br>
-        <a href="https://www.twitter.com"><img src="images/socialmedia/twitter32.png" alt="Twitter"></a>Twitter<br>
-        <a href="mailto:weather@example.com"><img src="images/socialmedia/emailat32.png" alt="Email"></a>weather@example.com
-      </div>
-      
-      
-    </footer>
-  </body>
-</html>
-
-CSS:
-@charset "utf-8";
-
-/* Nicholas J. Corkigian, 123456789 */
-
-*
-{
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-  list-style-type: none;
-  text-decoration: none;
-}
-
-body
-{
-  font-family: Arial, Helvetica, Verdans, sans-serif;
-  min-width: 620px;
-}
-
-nav
-{
-  background-color: black;
-  padding: 0px 20px;
-  position: sticky;
-  top: 0px;
-}
-
-nav::after
-{
-  content: "";
-  clear: both;
-  display: table;
-}
-
-nav li 
-{
-  float: left;
-  padding: 10px 10px;
-  margin: 0px 1em;
-}
-
-
-nav li:hover
-{
-  background-color: #808080;
-}
-
-nav a 
-{
-  color: #fdb924;
-}
-
-nav a:hover
-{
-  text-decoration: underline;
-}
-
-header
-{
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
-
-header > img
-{
-  justify-self: center;
-}
-
-header div#social
-{
-  align-self: center;
-}
-
-footer
-{
-  background-color: #fdb924;
-  display: grid;
-  grid-gap: 60px;
-  grid-template-columns: auto 1fr 1fr 1fr;
-  padding: 20px 0px 0px 20px;
-}
-
-h4
-{
-  border-bottom: 1px solid black;
-}
-
-footer div img
-{
-  margin-right: 2px;
-  vertical-align: middle;
-}
- !-->
