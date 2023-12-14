@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Final Exam</title>
+		<style>		
+			/* Change here to change side */
+			body {
+				display: grid;
+				grid-template-column: 1fr 2fr;
+				grid-gap: 10px;
+				padding-left: 100px;
+				padding-right: 100px;
+				padding-top: 20px;
+		}
+		/* Change here to change side */
+			header {
+				grid-column: 1/ span 2;
+				font-family: Comic Sans MS;
+				font-size: 2em;
+				text-align: center;
+			}
+			
+			footer {
+				grid-column: 1 / span 2;
+				grid-row: 3;
+				font-size: 0.75em;
+				text-align: center;
+				border-top: 1px solid black;
+				margin-top: 20px;
+			}
+			
+		
+			table {
+				grid-column: 1;
+				grid-row: 2;
+				border-collapse: collapse;
+				width: 110%;
+			}
+			
+			td, th {
+			/* Copy this to add border	*/
+				border: 1px solid black;
+			}
+			
+			th {
+				color: white;
+				background-color: black;
+				
+			}
+			
+			td {
+				font-family: sans-serif;
+			}
+			
+			caption {
+				caption-side: bottom;
+			}
+			
+			.firstcol {
+				width: 15%;
+				background-color: #D3D3D3;
+			}
+			
+			.days {
+				width: 12%;
+			}
+			/* Change here to change side */
+			#formcontainer {
+				grid-column: 2;
+				grid-row: 2;
+				border: 3px dotted black;
+				padding: 10px;
+				font-family: sans-serif;
+			}
+			
+			#formbutton1, #formbutton2 {
+				padding-bottom: 10px;
+				padding-right: 10px;
+				padding-top: 10px;
+				padding-left:10px;
+				margin-left: 20px;
+				text-decoration: underline;
+				border: 1px dotted black;
+				font-weight: bold;
+				background-color: white;
+			}
+			
+			fieldset {
+				margin: 10px auto;
+				margin-left: 5px;
+			}
+			
+			
+			.alignfields label {
+				width: 120px;
+				margin-right: 5px;
+			}
+			
+			#footer {
+			font-family: Comic Sans MS;
+			}
+		#vegan {
+		background-color: #D3D3D3;
+		}
+		 h3{
+		grid-column: 0/ span 1;
+				font-family: Comic Sans MS;
+				padding-bottom: 50px;
+				text-align: right;
+		}
+	#tablecap {
+		padding-top: 10px;
+		text-align: center;
+		font-weight: bold;
+		}
+		</style>
+	</head>
+	<body>
+		<header><b>
+			Nutrition Conference<br><br>
+         </b></header>
+	
+		<table>
+			
+			<colgroup>
+				<col class = "firstcol">
+				<col span = "6" class = "days">
+			</colgroup>
+			
+			
+			<tr>
+				<th>Conference Room</th>
+				<th>9:00am</th>
+				<th>11:00am</th>
+				<th>1:00pm</th>
+				<th>3:00am</th>
+				<th>7:00pm</th>
+			</tr>
+			
+			<tr>
+				<td><center>Lyra</center></td>
+				<td rowspan="2" colspan="3"><center>Lion Diets</center></td>
+				<td rowspan = "1"><center>Keto Diets</center></td>
+				<td rowspan="5" BGCOLOR="D3D3D3"><center>Vegan Diets</center></td>
+			</tr>
+			<tr>
+				<td><center>Persues</center></td>
+				
+				<td rowspan="2" colspan="1"><center>Fruits</center></td>
+				
+			</tr>
+			<tr>
+				<td><center>Virgo</td>
+				<td rowspan="2" colspan="1"><center>Legumes</center></td>
+				<td><center>Dairy</center></td>
+				<td><center>Peanuts</center></td>
+			</tr>
+			<tr>
+				<td><center>Taurus</center></td>
+				<td rowspan="1" Colspan="3"><center>Vegeterian Diets</center></td>
+				
+			</tr>
+			<tr>
+				<td><center>Orion</center></td>
+				<td colspan = "3"><center>Protein</center></td>
+				<td colspan="1"> <center>Dairy</center></td>
+			</tr>
+		
+		<caption id="tablecap">July Schedule</caption>
+		</table>
+			
+		
+		<div id = "formcontainer">
+			<h2>Survey</h2>
+			<form method = "post" action = "https://csunix.mohawkcollege.ca/tooltime/showit.pl">
+				<input type = "hidden" name = "formname" value = "Sharon Scollard">
+				
+				
+				<fieldset class = "alignfields"> <!-- Fieldset gives border!-->
+					<legend>Diet Information:</legend>
+					
+					<label for = "fName">Specialized Diet?</label>
+					<input type = "text" name = "fName" id = "fName" placeholder = "Vegan, Keto, etc.">
+					<br>
+					<label for = "lName">Favourite Vegetable?</label>
+					<input type = "text" name = "lName" id = "lName">
+					<br>
+					
+					<legend>
+					Favourite Fruit?
+					<select name = "prov">
+						<option value = "Apple">Apple</option>
+						<option value = "Banana">Banana</option>
+						<option value = "Appricot" selected = "selected">Apricot</option>
+						
+					</select></legend>
+					
+					<legend>
+					Province
+					<select name = "prov">
+						<option value = "Ontario" selected = "selected">Ontario</option>
+						<option value = "NovaScotia">Nova Scotia</option>
+						<option value = "Alberta" >Alberta</option>
+						<option value = "Quebec">Quebec</option>
+						
+					</select></legend>
+					
+				
+				</fieldset>
+				
+					<fieldset>
+					<legend>Activity (choose multiple)</legend>
+					
+					<div>
+						<input type = "checkbox">Run
+					</div>
+					
+					<div>
+						<input type = "checkbox" checked = "checked">Cycle
+					</div>
+					
+					<div>
+						<input type = "checkbox">Swim
+					</div>
+					
+					<div>
+						<input type = "checkbox">
+						Play a sport
+					</div><br><br>
+				How Often?<br><br>
+			<input type="radio"> 3+ Times per week <br>
+			<input type="radio" selected="selected"> 1 or 2 times per week<br>
+			<input type="radio"> Once a month<br>
+			</fieldset>
+				<fieldset>
+					<legend>Suggestions to motivate people to eat healthy?</legend>
+				
+					<textarea cols = "40" rows = "5" name = "question" placeholder = "Please suggest some ideas"></textarea>
+					
+				</fieldset>
+			
+			<center>	
+			<button id="formbutton1" type="submit"><u>Send Survey</u> <button id="formbutton2" type="clear"><u>Clear Survey</u>
+			</center></form>
+		</div>
+		
+		<footer id="footer">
+			
+		
+			Survey Says...© 2023
+		</footer>
+	</body>
+</html>
